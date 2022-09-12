@@ -2,17 +2,17 @@ require_relative 'classes/item'
 
 class App
   def initialize
+    @response = 0
   end
 
   def menu_options
     puts 'WELCOME TO MY CATALOG OF THINGS!'
-    response = 0
-    while response != 10
+    while @response != 10
       puts(
         'Please choose an option by entering a number:
         1 - List all books
         2 - List all music albums
-        3 - List of games 
+        3 - List of games
         4 - List all labels
         5 - List all authors
         6 - List all sources
@@ -26,8 +26,8 @@ class App
   end
 
   def start_app
-    response = gets.chomp
-    case response
+    @response = gets.chomp.to_i
+    case @response
     when 1
       list_books
     when 2
