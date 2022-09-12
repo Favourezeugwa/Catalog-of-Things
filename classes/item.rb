@@ -1,23 +1,20 @@
+require 'date'
+
 class Item
-    attr_accessor  :publish_date
-    def initialize(publish_date)
-        @id = Random.rand(1..1000)
-        @publish_date = publish_date
-        @archived= false
-    end
-    def test_time
-        puts  Time.now.year -(@publish_date).year
-    end
-    def can_be_archived?
-        Time.now.year -(@publish_date).year > 10
+  attr_accessor :genre, :author, :source, :label
+  attr_reader :publish_date, :archived
 
-    end
-    def move_to_archive
-       if can_be_archived?
-        @archived=true
-        end
-    end
+  def initialize(publish_date)
+    @id = Random.rand(1..1000)
+    @publish_date = publish_date
+    @archived = false
+  end
+
+  def can_be_archived?
+    Date.today - Date.parse(@publish_date) > 3650
+  end
+
+  def move_to_archive
+    @archived = true if can_be_archived?
+  end
 end
-
-new_item = Item.new((2001-2-25))
-new_item.test_time
