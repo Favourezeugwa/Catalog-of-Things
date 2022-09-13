@@ -1,8 +1,13 @@
 require_relative 'classes/item'
+require_relative 'classes/book'
+require_relative "modules/book_module"
+
 
 class App
+  include BookModule
   def initialize
     @response = 0
+    @books = []
   end
 
   def menu_options
