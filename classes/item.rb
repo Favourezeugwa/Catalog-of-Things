@@ -17,4 +17,8 @@ class Item
   def move_to_archive
     @archived = true if can_be_archived?
   end
+  def add_label(label)
+    @label = label
+    label.items << self unless label.items.include?(self)
+  end
 end
