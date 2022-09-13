@@ -1,4 +1,8 @@
+
+
 module BookModule
+
+
   def list_books
     puts 'No books found' if @books.empty?
     @books.each do |book|
@@ -13,10 +17,19 @@ module BookModule
     cover_state = gets.chomp
     puts 'Enter publish date:'
     publish_date = gets.chomp
+    puts 'Enter label title:'
+    label_title = gets.chomp
+    puts 'Enter label color:'
+    label_color = gets.chomp
     book = Book.new(publisher, cover_state, publish_date)
+    label= Label.new(label_title, label_color)
+    label.add_item(book)
+    @labels << label
     @books << book
     puts 'Book added successfully'
     save_books
+    save_labels
+   
   end
 
   def save_books

@@ -1,13 +1,22 @@
 require_relative 'classes/item'
 require_relative 'classes/book'
+require_relative "classes/label"
 require_relative 'modules/book_module'
+require_relative 'modules/label_module'
+
 require 'json'
 class App
   include BookModule
+include LabelModule
+
   def initialize
     @response = 0
     @books = []
+    @labels= []
+   
     load_books
+    load_labels
+    
   end
 
   def menu_options
