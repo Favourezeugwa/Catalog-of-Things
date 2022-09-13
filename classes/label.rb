@@ -1,3 +1,4 @@
+require_relative 'book'
 class Label
   attr_accessor :title, :color, :items
 
@@ -10,5 +11,6 @@ class Label
 
   def add_item(item)
     @items << item unless @items.include?(item)
+    item.add_label(self)
   end
 end

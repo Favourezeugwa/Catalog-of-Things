@@ -18,6 +18,11 @@ class Item
     @archived = true if can_be_archived?
   end
 
+  def add_label(label)
+    @label = label
+    label.add_item(self) unless label.items.include?(self)
+  end
+
   def add_author(author)
     @author = author
     author.add_item(self) unless author.items.include?(self)
