@@ -1,5 +1,6 @@
+require 'item'
 
-class MusicAlbum
+class MusicAlbum < Item
   def initialize(on_sportify)
 @on_sportify = on_sportify
   end
