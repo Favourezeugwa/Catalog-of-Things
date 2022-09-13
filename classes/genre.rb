@@ -1,3 +1,5 @@
+require_relative 'item'
+
 class Genre
   attr_accessor :name, :items
 
@@ -7,8 +9,8 @@ class Genre
     @items = []
   end
 
-  def add_genre(_genre)
-    @item = item
-    item.genre.push(self) unless item.include?(self)
+  def add_item(item)
+    @items.push(item) unless @items.include?(item)
+    item.add_genre(self)
   end
 end
