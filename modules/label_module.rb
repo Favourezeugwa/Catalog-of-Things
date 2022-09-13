@@ -5,8 +5,9 @@ module LabelModule
       puts "Label title: #{label.title}, Label color: #{label.color}"
     end
   end
+
   def save_labels
-   label_hash = []
+    label_hash = []
     @labels.each do |label|
       label_hash << {
         title: label.title,
@@ -24,5 +25,4 @@ module LabelModule
       @labels << label_new
     end
   end
-   
 end

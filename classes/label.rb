@@ -1,4 +1,4 @@
-require_relative "book"
+require_relative 'book'
 class Label
   attr_accessor :title, :color, :items
 
@@ -14,4 +14,3 @@ class Label
     item.add_label(self)
   end
 end
-

@@ -8,7 +8,5 @@ describe Label do
     it 'should return true if object is an instance of the Label class' do
       expect(@label).to be_an_instance_of Label
     end
-
-    
   end
 end
