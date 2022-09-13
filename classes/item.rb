@@ -23,9 +23,4 @@ class Item
   end
 end
 
-itemdate = Item.new('2010-01-01')
-p itemdate.can_be_archived?
-p itemdate.move_to_archive
-author1 = itemdate.add_author('John')
-p author1
 

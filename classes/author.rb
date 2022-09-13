@@ -10,12 +10,6 @@ class Author
 
   def add_item(item)
     @items.push(item)
-    item.add_author(self)
+    # item.add_author(self)
   end
-
 end
-
-author = Author.new('John', 'Doe')
-author.add_item('Book 1')
-author.add_item('Book 2')
-p author.items
