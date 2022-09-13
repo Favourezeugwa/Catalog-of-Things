@@ -5,7 +5,7 @@ class MusicAlbum < Item
 
   def initialize(on_sportify, publish_date)
     super(publish_date)
-@on_sportify = on_sportify
+    @on_sportify = on_sportify
   end
 
   def can_be_archived?()
