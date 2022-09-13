@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Author
   attr_accessor :first_name, :last_name, :items
 
@@ -8,8 +10,8 @@ class Author
     @items = []
   end
 
-  def add_item(item)
-    @items.push(item)
-    # item.add_author(self)
+  def add_item(game)
+    @items.push(game)
+    game.author = self
   end
 end
