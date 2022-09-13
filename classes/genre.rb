@@ -7,17 +7,8 @@ class Genre
     @items = []
   end
 
-  def add_item(genre)
+  def add_genre(genre)
     @item = item
     item.genre.push(self) unless item.include?(self)
   end
 end
-
-
-
-
-
-# def classroom=(classroom)
-#     @classroom = classroom
-#     classroom.student.push(self) unless classroom.include?(self)
-#   end
