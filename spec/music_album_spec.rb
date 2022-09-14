@@ -2,7 +2,7 @@ require_relative '../classes/music_album'
 
 describe MusicAlbum do
   before :each do
-    @music_album = MusicAlbum.new(true, '2022-03-24')
+    @music_album = MusicAlbum.new('Gids_album' ,true, '2022-03-24')
   end
 
   context 'when testing the MusicAlbum class' do
@@ -11,8 +11,8 @@ describe MusicAlbum do
     end
 
     it 'should return true on having album on_spotify ' do
-      on_sportify = @music_album.on_sportify == true
-      expect(on_sportify).to be true
+      on_spotify = @music_album.on_spotify == true
+      expect(on_spotify).to be true
     end
 
     it 'should return true when calling the can_be_archived? method' do
