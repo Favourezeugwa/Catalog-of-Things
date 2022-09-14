@@ -5,22 +5,34 @@ require_relative 'classes/music_album'
 require_relative 'modules/book_module'
 require_relative 'modules/label_module'
 require_relative 'modules/music_album_module'
+require_relative 'classes/game'
+require_relative 'classes/author'
+require_relative 'modules/book_module'
+require_relative 'modules/label_module'
+require_relative 'modules/validity'
+require_relative 'modules/handle_files'
 
 require 'json'
 class App
   include BookModule
   include LabelModule
   include MusicAlbumModule
+  include Validity
+  include HandleFiles
 
   def initialize
     @response = 0
     @books = []
     @labels = []
     @music_albums = []
+    @games = []
+    @authors = []
+
 
     load_albums
     load_books
     load_labels
+    load_author
   end
 
   def menu_options
@@ -55,9 +67,9 @@ class App
     when 4
       list_labels
     when 5
-      list_authors
-    when 6
       list_genres
+    when 6
+      list_authors
     when 7
       add_book
     when 8
