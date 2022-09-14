@@ -2,7 +2,7 @@ require_relative '../classes/music_album'
 
 describe MusicAlbum do
   before :each do
-    @music_album = MusicAlbum.new('Gids_album' ,true, '2022-03-24')
+    @music_album = MusicAlbum.new('Gids_album', true, '2022-03-24')
   end
 
   context 'when testing the MusicAlbum class' do
