@@ -1,18 +1,28 @@
 require_relative 'classes/item'
 require_relative 'classes/book'
 require_relative 'classes/label'
+require_relative 'classes/game'
+require_relative 'classes/author'
 require_relative 'modules/book_module'
 require_relative 'modules/label_module'
+require_relative 'modules/game_module'
+require_relative 'modules/author_module'
+require_relative 'modules/validity'
 
 require 'json'
 class App
   include BookModule
   include LabelModule
+  include GamesModule
+  include AuthorModule
+  include Validity
 
   def initialize
     @response = 0
     @books = []
     @labels = []
+    @games = []
+    @authors = []
 
     load_books
     load_labels
@@ -20,7 +30,7 @@ class App
 
   def menu_options
     puts 'WELCOME TO MY CATALOG OF THINGS!'
-    while @response != 10
+    while @response != 11
       puts(
         'Please choose an option by entering a number:
         1 - List all books
@@ -32,7 +42,8 @@ class App
         7 - Add a book
         8 - Add a music album
         9 - Add a game
-        10 - Exit'
+        10 - Add author
+        11 - Exit'
       )
       start_app
     end
@@ -59,6 +70,8 @@ class App
       add_music_album
     when 9
       add_game
+    when 10
+      add_author
     end
   end
 end
