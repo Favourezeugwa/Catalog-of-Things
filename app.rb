@@ -50,9 +50,9 @@ class App
     when 4
       list_labels
     when 5
-      list_authors
-    when 6
       list_genres
+    when 6
+      list_authors
     when 7
       add_book
     when 8
