@@ -1,4 +1,8 @@
+require 'json'
+require_relative 'game_module'
+
 module HandleFiles
+  include GamesModule
   # WRITER
   def write_json(array, file_path)
     opts = {
@@ -19,34 +23,20 @@ module HandleFiles
     JSON.parse(file)
   end
 
-  def save_games
-    array = []
-    @games.each do |game|
-      array << {
-        publish_date: game.publish_date,
-        multiplayer: game.multiplayer,
-        last_played_at: game.last_played_at
-      }
-    end
-    write_json(array, './JSONdata/games.json')
-  end
-
-  def load_games
-    parse_file = read_json('./JSONdata/games.json')
-    return if parse_file.nil?
-
-    parse_file.each do |game|
-      @games << Game.new(game['publish_date'], game['multiplayer'], game['last_played_at'])
-    end
-  end
-
   def save_author
     array = []
     @authors.each do |author|
       array << {
         author_id: author.id,
         first_name: author.first_name,
-        last_name: author.last_name
+        last_name: author.last_name,
+        Items: author.items.map do |item|
+                 {
+                   publish_date: item.publish_date,
+                   multiplayer: item.multiplayer,
+                   last_played_at: item.last_played_at
+                 }
+               end
       }
     end
     write_json(array, './JSONdata/authors.json')
@@ -55,7 +45,11 @@ module HandleFiles
   def load_author
     parse_file = read_json('./JSONdata/authors.json')
     parse_file.each do |author|
-      @authors << Author.new(author['first_name'], author['last_name'])
+      person = Author.new(author['first_name'], author['last_name'])
+      @authors << person
+      author['Items'].each do |item|
+        person.add_item(Game.new(item['publish_date'], item['multiplayer'], item['last_played_at']))
+      end
     end
   end
 end

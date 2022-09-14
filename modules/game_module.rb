@@ -1,7 +1,7 @@
-require_relative '../classes/game'
+require_relative '../classes/author'
 
 module GamesModule
-  def add_game
+  def create_game
     puts 'Enter Published date (YYYY-MM-DD): '
     publish_date = gets.chomp
     valid_date(publish_date)
@@ -19,16 +19,62 @@ module GamesModule
     last_played_at = gets.chomp
     valid_last_played(last_played_at)
 
-    game = Game.new(publish_date, multiplayer, last_played_at)
-    @games.push(game)
-    puts 'Game added Successfully!'
-    save_games
+    Game.new(publish_date, multiplayer, last_played_at)
+  end
+
+  def game_with_new_author
+    puts 'Author\'s First name: '
+    first_name = gets.chomp
+    valid_name(first_name)
+
+    puts 'Author\'s Last name: '
+    last_name = gets.chomp
+    valid_last_name(last_name)
+
+    Author.new(first_name, last_name)
+  end
+
+  def game_with_existing_author
+    list_authors
+
+    puts 'Select Author ID: '
+    author_id = gets.chomp
+    author_id = author_id.to_i
+    @authors.find { |author| author.id == author_id }
+  end
+
+  def add_game
+    game = create_game
+    puts 'To create a new author enter [1] or an existing author [2]: '
+    author = gets.chomp.to_i
+    case author
+    when 1
+      author = game_with_new_author
+      @authors << author.add_item(game)
+      @games << game
+      save_author
+    when 2
+      author = game_with_existing_author
+      author.add_item(game)
+      @games << game
+      save_author
+    end
   end
 
   def list_games
     puts
-    @games.each_with_index do |game, index|
-      puts "#{index}) Published date: '#{game.publish_date}', Multiplayer: #{game.multiplayer}, Last played at: '#{game.last_played_at}'"
+    @authors.each do |author|
+      author.items.each_with_index do |item, index|
+        puts "#{index})  Author: '#{author.first_name}', Published date: '#{item.publish_date}',
+        Multiplayer: #{item.multiplayer}, Last played at: '#{item.last_played_at}'"
+      end
+    end
+  end
+
+  def list_authors
+    puts
+    @authors.each_with_index do |author, index|
+      puts "#{index}) [Author ID]: '#{author.id}', First name: '#{author.first_name}', Last name: '#{author.last_name}'"
     end
   end
 end
