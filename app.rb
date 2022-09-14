@@ -10,7 +10,7 @@ require 'json'
 class App
   include BookModule
   include LabelModule
-include MusicAlbumModule
+  include MusicAlbumModule
 
   def initialize
     @response = 0
