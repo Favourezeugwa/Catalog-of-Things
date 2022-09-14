@@ -22,6 +22,7 @@ module GamesModule
     game = Game.new(publish_date, multiplayer, last_played_at)
     @games.push(game)
     puts 'Game added Successfully!'
+    save_games
   end
 
   def list_games
