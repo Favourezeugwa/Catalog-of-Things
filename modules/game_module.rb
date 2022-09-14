@@ -1,3 +1,5 @@
+require_relative '../classes/game'
+
 module GamesModule
   def add_game
     puts 'Enter Published date (YYYY-MM-DD): '
@@ -25,7 +27,7 @@ module GamesModule
   def list_games
     puts
     @games.each_with_index do |game, index|
-      puts "#{index}) Published date: '#{game.publish_date}', Multiplayer: #{game.multiplayer.to_s}, Last played at: '#{game.last_played_at}'"
+      puts "#{index}) Published date: '#{game.publish_date}', Multiplayer: #{game.multiplayer}, Last played at: '#{game.last_played_at}'"
     end
   end
 end

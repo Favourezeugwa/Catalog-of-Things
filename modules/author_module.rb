@@ -11,6 +11,7 @@ module AuthorModule
     author = Author.new(first_name, last_name)
     @authors.push(author)
     puts 'Author added Successfully!'
+    save_author
   end
 
   def list_authors

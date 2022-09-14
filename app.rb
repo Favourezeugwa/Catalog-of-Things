@@ -8,6 +8,7 @@ require_relative 'modules/label_module'
 require_relative 'modules/game_module'
 require_relative 'modules/author_module'
 require_relative 'modules/validity'
+require_relative 'modules/handle_files'
 
 require 'json'
 class App
@@ -16,6 +17,7 @@ class App
   include GamesModule
   include AuthorModule
   include Validity
+  include HandleFiles
 
   def initialize
     @response = 0
@@ -26,6 +28,8 @@ class App
 
     load_books
     load_labels
+    load_games
+    load_author
   end
 
   def menu_options

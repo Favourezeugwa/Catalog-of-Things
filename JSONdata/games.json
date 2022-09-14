@@ -1,0 +1,17 @@
+[
+  {
+    "publish_date" : "2019-11-23",
+    "multiplayer" : true,
+    "last_played_at" : "2020-09-12"
+  },
+  {
+    "publish_date" : "2012-06-20",
+    "multiplayer" : false,
+    "last_played_at" : "2021-10-24"
+  },
+  {
+    "publish_date" : "2003-08-24",
+    "multiplayer" : true,
+    "last_played_at" : "2014-12-29"
+  }
+]
