@@ -1,0 +1,48 @@
+[
+  {
+    "author_id" : 979,
+    "first_name" : "Favour",
+    "last_name" : "Ezeugwa",
+    "Items" : [
+      {
+        "publish_date" : "2021-02-31",
+        "multiplayer" : true,
+        "last_played_at" : "2022-12-24"
+      },
+      {
+        "publish_date" : "2005-12-04",
+        "multiplayer" : true,
+        "last_played_at" : "2015-09-10"
+      }
+    ]
+  },
+  {
+    "author_id" : 498,
+    "first_name" : "Marilyn",
+    "last_name" : "Monroe",
+    "Items" : [
+      {
+        "publish_date" : "2003-12-31",
+        "multiplayer" : false,
+        "last_played_at" : "2015-04-21"
+      },
+      {
+        "publish_date" : "2017-09-09",
+        "multiplayer" : true,
+        "last_played_at" : "2022-10-13"
+      }
+    ]
+  },
+  {
+    "author_id" : 42,
+    "first_name" : "Brian",
+    "last_name" : "Chadwick",
+    "Items" : [
+      {
+        "publish_date" : "1991-01-23",
+        "multiplayer" : true,
+        "last_played_at" : "2003-11-24"
+      }
+    ]
+  }
+]
