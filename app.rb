@@ -17,12 +17,12 @@ class App
 
   def initialize
     @response = 0
-    #modules
+    # modules
     @books = []
     @games = []
     @music_albums = []
 
-    #classes
+    # classes
     @authors = []
     @labels = []
     @genres = []
@@ -30,7 +30,6 @@ class App
     load_labels
     load_author
     load_genres
-
   end
 
   def menu_options

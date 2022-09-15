@@ -47,8 +47,6 @@ module HandleFiles
     write_json(array, './JSONdata/authors.json')
   end
 
-
-
   def load_author
     parse_file = read_json('./JSONdata/authors.json')
     parse_file.each do |author|
@@ -60,7 +58,6 @@ module HandleFiles
     end
   end
 
-
   def save_label
     array = []
     @labels.each do |label|
@@ -69,18 +66,16 @@ module HandleFiles
         title: label.title,
         color: label.color,
         Items: label.items.map do |item|
-                {
-                  cover_state: item.cover_state,
-                  publisher: item.publisher,
-                  publish_date: item.publish_date
-                }
-              end
+                 {
+                   cover_state: item.cover_state,
+                   publisher: item.publisher,
+                   publish_date: item.publish_date
+                 }
+               end
       }
     end
     write_json(array, './JSONdata/labels.json')
   end
-
-
 
   def load_labels
     parse_file = read_json('./JSONdata/labels.json')
@@ -93,7 +88,6 @@ module HandleFiles
     end
   end
 
-
   def save_genre
     array = []
     @genres.each do |genre|
@@ -102,10 +96,10 @@ module HandleFiles
         name: genre.name,
         Items: genre.items.map do |item|
                  {
-                  on_sportify: item.on_sportify,
-                  publish_date: item.publish_date
+                   on_sportify: item.on_sportify,
+                   publish_date: item.publish_date
                  }
-              end
+               end
       }
     end
     write_json(array, './JSONdata/genres.json')

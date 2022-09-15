@@ -10,10 +10,10 @@ class Label
     @items = []
   end
 
-   def add_item(book)
+  def add_item(book)
     # @items << book unless @items.include?(book)
     # book.add_label(self)
     @items.push(book)
     book.label = self
-   end
+  end
 end
