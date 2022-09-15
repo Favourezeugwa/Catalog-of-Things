@@ -1,7 +1,7 @@
 require 'json'
-require_relative 'game_module'
-require_relative 'book_module'
-require_relative 'music_module'
+require_relative '../modules/game_module'
+require_relative '../modules/book_module'
+require_relative '../modules/music_module'
 
 module HandleFiles
   include GamesModule

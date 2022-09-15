@@ -6,23 +6,18 @@ require_relative 'classes/author'
 require_relative 'classes/music'
 require_relative 'classes/genre'
 require_relative 'modules/validity'
-require_relative 'modules/handle_files'
+require_relative 'handler/handle_files'
 
 require 'json'
 class App
-  # include BookModule
-  # include LabelModule
   include Validity
   include HandleFiles
 
   def initialize
     @response = 0
-    # modules
     @books = []
     @games = []
     @music_albums = []
-
-    # classes
     @authors = []
     @labels = []
     @genres = []
