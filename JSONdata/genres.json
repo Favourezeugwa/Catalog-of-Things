@@ -1,0 +1,16 @@
+[
+  {
+    "genre_id" : 462,
+    "name" : "pop",
+    "Items" : [
+      {
+        "on_sportify" : true,
+        "publish_date" : "2020-01-01"
+      },
+      {
+        "on_sportify" : false,
+        "publish_date" : "1999-09-09"
+      }
+    ]
+  }
+]
