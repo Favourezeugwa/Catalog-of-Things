@@ -15,7 +15,7 @@
 - Rubocop and Gemfile
 
 ### Link to video recording
-[Link to video]()
+[Link to video](https://drive.google.com/file/d/1lbDAOA3ELf1bkJ3KlIIfMN43FxHLWiwC/view?usp=sharing)
 
 ## Getting Started
 
