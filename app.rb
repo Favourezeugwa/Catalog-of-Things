@@ -1,38 +1,30 @@
 require_relative 'classes/item'
 require_relative 'classes/book'
 require_relative 'classes/label'
-require_relative 'classes/music_album'
-require_relative 'modules/book_module'
-require_relative 'modules/label_module'
-require_relative 'modules/music_album_module'
 require_relative 'classes/game'
 require_relative 'classes/author'
-require_relative 'modules/book_module'
-require_relative 'modules/label_module'
-require_relative 'modules/validity'
-require_relative 'modules/handle_files'
+require_relative 'classes/music'
+require_relative 'classes/genre'
+require_relative 'modules/validity_module'
+require_relative 'handler/handle_files'
 
 require 'json'
 class App
-  include BookModule
-  include LabelModule
-  include MusicAlbumModule
   include Validity
   include HandleFiles
 
   def initialize
     @response = 0
     @books = []
-    @labels = []
-    @music_albums = []
     @games = []
+    @music_albums = []
     @authors = []
+    @labels = []
+    @genres = []
 
-
-    load_albums
-    load_books
     load_labels
     load_author
+    load_genres
   end
 
   def menu_options

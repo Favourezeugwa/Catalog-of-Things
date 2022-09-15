@@ -1,47 +1,42 @@
 [
   {
-    "author_id" : 979,
-    "first_name" : "Favour",
-    "last_name" : "Ezeugwa",
+    "author_id" : 371,
+    "first_name" : "Nwa",
+    "last_name" : "rex",
     "Items" : [
       {
-        "publish_date" : "2021-02-31",
+        "publish_date" : "2020-09-10",
         "multiplayer" : true,
-        "last_played_at" : "2022-12-24"
-      },
-      {
-        "publish_date" : "2005-12-04",
-        "multiplayer" : true,
-        "last_played_at" : "2015-09-10"
+        "last_played_at" : "2022-10-04"
       }
     ]
   },
   {
-    "author_id" : 498,
+    "author_id" : 89,
     "first_name" : "Marilyn",
-    "last_name" : "Monroe",
-    "Items" : [
-      {
-        "publish_date" : "2003-12-31",
-        "multiplayer" : false,
-        "last_played_at" : "2015-04-21"
-      },
-      {
-        "publish_date" : "2017-09-09",
-        "multiplayer" : true,
-        "last_played_at" : "2022-10-13"
-      }
-    ]
-  },
-  {
-    "author_id" : 42,
-    "first_name" : "Brian",
     "last_name" : "Chadwick",
     "Items" : [
       {
-        "publish_date" : "1991-01-23",
+        "publish_date" : "2000-12-23",
         "multiplayer" : true,
-        "last_played_at" : "2003-11-24"
+        "last_played_at" : "2012-11-31"
+      },
+      {
+        "publish_date" : "2019-03-17",
+        "multiplayer" : false,
+        "last_played_at" : "2022-08-16"
+      }
+    ]
+  },
+  {
+    "author_id" : 948,
+    "first_name" : "Laurel",
+    "last_name" : "Thompson",
+    "Items" : [
+      {
+        "publish_date" : "1997-05-18",
+        "multiplayer" : false,
+        "last_played_at" : "2017-10-26"
       }
     ]
   }

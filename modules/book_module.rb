@@ -1,50 +1,68 @@
+require_relative '../classes/label'
+
 module BookModule
-  def list_books
-    puts 'No books found' if @books.empty?
-    @books.each do |book|
-      puts "Publisher: #{book.publisher}, Publish date: #{book.publish_date}"
-    end
+  def create_book
+    puts 'Enter publisher:'
+    publisher = gets.chomp
+
+    puts 'Enter cover state:'
+    cover_state = gets.chomp
+
+    puts 'Enter publish date:'
+    publish_date = gets.chomp
+
+    Book.new(publisher, cover_state, publish_date)
+  end
+
+  def new_book_label
+    puts 'Enter label title:'
+    title = gets.chomp
+
+    puts 'Enter label color:'
+    color = gets.chomp
+
+    Label.new(title, color)
+  end
+
+  def existing_book_label
+    list_labels
+    puts 'Select a book ID from the list: '
+    label_id = gets.chomp
+    label_id = label_id.to_i
+    @labels.find { |label| label.id == label_id }
   end
 
   def add_book
-    puts 'Enter publisher:'
-    publisher = gets.chomp
-    puts 'Enter cover state:'
-    cover_state = gets.chomp
-    puts 'Enter publish date:'
-    publish_date = gets.chomp
-    puts 'Enter label title:'
-    label_title = gets.chomp
-    puts 'Enter label color:'
-    label_color = gets.chomp
-    book = Book.new(publisher, cover_state, publish_date)
-    label = Label.new(label_title, label_color)
-    label.add_item(book)
-    @labels << label
-    @books << book
-    puts 'Book added successfully'
-    save_books
-    save_labels
-  end
-
-  def save_books
-    book_hash = []
-    @books.each do |book|
-      book_hash << {
-        publisher: book.publisher,
-        cover_state: book.cover_state,
-        publish_date: book.publish_date
-      }
+    book = create_book
+    puts 'To create a new label [1] or existing label [2]: '
+    label = gets.chomp.to_i
+    case label
+    when 1
+      label = new_book_label
+      @labels << label.add_item(book)
+      @books << book
+      save_label
+    when 2
+      label = existing_book_label
+      label.add_item(book)
+      @books << book
+      save_label
     end
-    File.open('./JSONdata/books.json', 'w') { |f| f.puts book_hash.to_json }
   end
 
-  def load_books
-    book_file = File.exist?('./JSONdata/books.json') ? File.read('./JSONdata/books.json') : '[]'
-    book_h = JSON.parse(book_file)
-    book_h.each do |book|
-      book_new = Book.new(book['publisher'], book['cover_state'], book['publish_date'])
-      @books << book_new
+  def list_books
+    puts
+    @labels.each_with_index do |label, index|
+      label.items.each do |item|
+        puts "#{index}) Publisher: #{item.publisher}, Publish date: '#{item.publish_date}', Cover state: '#{item.cover_state}' "
+      end
+    end
+  end
+
+  def list_labels
+    puts 'No labels found' if @labels.empty?
+    @labels.each_with_index do |label, index|
+      puts "#{index}) [label ID]: '#{label.id}', Label title: '#{label.title}', Label color: '#{label.color}'"
     end
   end
 end

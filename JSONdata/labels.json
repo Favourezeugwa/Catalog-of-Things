@@ -1,1 +1,43 @@
-[{"title":"heyyooo","color":"red"},{"title":"gee","color":"red"},{"title":"mama","color":"blue"},{"title":"Man o man","color":"Blue"},{"title":"Amazing","color":"White"}]
+[
+  {
+    "label_id" : 841,
+    "title" : null,
+    "color" : null,
+    "Items" : [
+      {
+        "cover_state" : "bad",
+        "publisher" : "Winner",
+        "publish_date" : "1995-01-01"
+      },
+      {
+        "cover_state" : "good",
+        "publisher" : "Mayor",
+        "publish_date" : "2004-10-24"
+      }
+    ]
+  },
+  {
+    "label_id" : 39,
+    "title" : null,
+    "color" : null,
+    "Items" : [
+      {
+        "cover_state" : "P.N Okeke",
+        "publisher" : "Excellent",
+        "publish_date" : "2003-11-10"
+      }
+    ]
+  },
+  {
+    "label_id" : 924,
+    "title" : "Chemistry",
+    "color" : "Pink",
+    "Items" : [
+      {
+        "cover_state" : "Good",
+        "publisher" : "Hallmark Ababio",
+        "publish_date" : "2005-11-23"
+      }
+    ]
+  }
+]
