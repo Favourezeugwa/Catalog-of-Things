@@ -15,3 +15,4 @@ class Author
     game.author = self
   end
 end
+

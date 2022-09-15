@@ -10,19 +10,22 @@ require_relative 'modules/handle_files'
 
 require 'json'
 class App
-  include BookModule
-  include LabelModule
+  # include BookModule
+  # include LabelModule
   include Validity
   include HandleFiles
 
   def initialize
     @response = 0
+    #modules
     @books = []
-    @labels = []
     @games = []
-    @authors = []
 
-    load_books
+    #classes
+    @authors = []
+    @labels = []
+
+    # load_books
     load_labels
     load_author
   end

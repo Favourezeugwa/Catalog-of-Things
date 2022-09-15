@@ -3,6 +3,7 @@ require_relative 'game_module'
 
 module HandleFiles
   include GamesModule
+  include BookModule
   # WRITER
   def write_json(array, file_path)
     opts = {
@@ -42,6 +43,8 @@ module HandleFiles
     write_json(array, './JSONdata/authors.json')
   end
 
+
+
   def load_author
     parse_file = read_json('./JSONdata/authors.json')
     parse_file.each do |author|
@@ -49,6 +52,39 @@ module HandleFiles
       @authors << person
       author['Items'].each do |item|
         person.add_item(Game.new(item['publish_date'], item['multiplayer'], item['last_played_at']))
+      end
+    end
+  end
+
+
+  def save_label
+    array = []
+    @labels.each do |label|
+      array << {
+        label_id: label.id,
+        title: label.title,
+        color: label.color,
+        Items: label.items.map do |item|
+                {
+                  cover_state: item.cover_state,
+                  publisher: item.publisher,
+                  publish_date: item.publish_date
+                }
+              end
+      }
+    end
+    write_json(array, './JSONdata/labels.json')
+  end
+
+
+
+  def load_labels
+    parse_file = read_json('./JSONdata/labels.json')
+    parse_file.each do |label|
+      tag = Label.new(label['publisher'], label['cover_state'])
+      @labels << tag
+      label['Items'].each do |item|
+        tag.add_item(Book.new(item['cover_state'], item['publisher'], item['publish_date']))
       end
     end
   end
