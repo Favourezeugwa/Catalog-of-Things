@@ -1,25 +1,15 @@
 [
   {
-    "genre_id" : 55,
+    "genre_id" : 462,
     "name" : "pop",
     "Items" : [
       {
         "on_sportify" : true,
-        "publish_date" : "2016-12-17"
+        "publish_date" : "2020-01-01"
       },
       {
-        "on_sportify" : true,
-        "publish_date" : "2014-10-03"
-      }
-    ]
-  },
-  {
-    "genre_id" : 712,
-    "name" : "blues",
-    "Items" : [
-      {
         "on_sportify" : false,
-        "publish_date" : "1999-10-12"
+        "publish_date" : "1999-09-09"
       }
     ]
   }

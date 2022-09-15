@@ -62,7 +62,7 @@ module GamesModule
   end
 
   def list_games
-    puts
+    puts 'No games found' if @authors.empty?
     @authors.each do |author|
       author.items.each_with_index do |item, index|
         puts "#{index})  Author: '#{author.first_name}', Published date: '#{item.publish_date}',
@@ -72,7 +72,7 @@ module GamesModule
   end
 
   def list_authors
-    puts
+    puts 'No authors found' if @authors.empty?
     @authors.each_with_index do |author, index|
       puts "#{index}) [Author ID]: '#{author.id}', First name: '#{author.first_name}', Last name: '#{author.last_name}'"
     end

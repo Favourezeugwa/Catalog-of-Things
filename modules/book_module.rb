@@ -51,7 +51,7 @@ module BookModule
   end
 
   def list_books
-    puts
+    puts 'No books found' if @labels.empty?
     @labels.each_with_index do |label, index|
       label.items.each do |item|
         puts "#{index}) Publisher: #{item.publisher}, Publish date: '#{item.publish_date}', Cover state: '#{item.cover_state}' "
