@@ -28,6 +28,7 @@ module HandleFiles
     JSON.parse(file)
   end
 
+  # AUTHORS
   def save_author
     array = []
     @authors.each do |author|
@@ -58,6 +59,7 @@ module HandleFiles
     end
   end
 
+  # LABELS
   def save_label
     array = []
     @labels.each do |label|
@@ -88,6 +90,7 @@ module HandleFiles
     end
   end
 
+  # GENRES
   def save_genre
     array = []
     @genres.each do |genre|
