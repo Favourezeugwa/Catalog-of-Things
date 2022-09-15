@@ -1,15 +1,14 @@
 require_relative 'item'
 
 class MusicAlbum < Item
-  attr_accessor :name, :on_spotify, :genre
+  attr_accessor :on_sportify, :publish_date
 
-  def initialize(name, on_spotify, publish_date)
+  def initialize(on_sportify, publish_date)
     super(publish_date)
-    @name = name
-    @on_spotify = on_spotify
+    @on_sportify = on_sportify
   end
 
   def can_be_archived?()
-    super || @on_spotify == true
+    super || @on_sportify == true
   end
 end
