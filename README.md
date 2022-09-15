@@ -14,6 +14,9 @@
 - Ruby modules
 - Rubocop and Gemfile
 
+### Link to video recording
+[Link to video]()
+
 ## Getting Started
 
 ### Clone this repository
@@ -23,7 +26,7 @@
   $ git clone git@github.com:Favourezeugwa/Catalog-of-Things.git
   $ cd Catalog-of-things
   $ code .
-  
+
 ```
 
 ### Run project
