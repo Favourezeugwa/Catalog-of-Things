@@ -1,6 +1,6 @@
 [
   {
-    "author_id" : 949,
+    "author_id" : 245,
     "first_name" : "Nwa",
     "last_name" : "rex",
     "Items" : [
@@ -8,6 +8,18 @@
         "publish_date" : "2020-09-10",
         "multiplayer" : true,
         "last_played_at" : "2022-10-04"
+      }
+    ]
+  },
+  {
+    "author_id" : 140,
+    "first_name" : "Marilyn",
+    "last_name" : "Chadwick",
+    "Items" : [
+      {
+        "publish_date" : "2000-12-23",
+        "multiplayer" : true,
+        "last_played_at" : "2012-11-31"
       }
     ]
   }

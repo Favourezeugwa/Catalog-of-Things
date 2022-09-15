@@ -3,8 +3,8 @@ require_relative 'classes/book'
 require_relative 'classes/label'
 require_relative 'classes/game'
 require_relative 'classes/author'
-require_relative 'modules/book_module'
-require_relative 'modules/label_module'
+require_relative 'classes/music'
+require_relative 'classes/genre'
 require_relative 'modules/validity'
 require_relative 'modules/handle_files'
 
@@ -20,14 +20,17 @@ class App
     #modules
     @books = []
     @games = []
+    @music_albums = []
 
     #classes
     @authors = []
     @labels = []
+    @genres = []
 
-    # load_books
     load_labels
     load_author
+    load_genres
+
   end
 
   def menu_options

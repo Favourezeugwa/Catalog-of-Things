@@ -1,7 +1,7 @@
-require_relative 'item'
+require_relative 'music'
 
 class Genre
-  attr_accessor :name, :items
+  attr_accessor :name, :items, :id
 
   def initialize(name)
     @id = Random.rand(1..1000)
@@ -9,8 +9,8 @@ class Genre
     @items = []
   end
 
-  def add_item(item)
-    @items.push(item) unless @items.include?(item)
-    item.add_genre(self)
+  def add_item(music)
+    @items.push(music)
+    music.genre = self
   end
 end
