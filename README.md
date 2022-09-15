@@ -26,7 +26,6 @@
   $ git clone git@github.com:Favourezeugwa/Catalog-of-Things.git
   $ cd Catalog-of-things
   $ code .
-
 ```
 
 ### Run project
@@ -34,19 +33,16 @@
 ```
   VS-code terminal
   $ Ruby main.rb
-
 ```
 
 ```
   command prompt - irb
   $ irb
-
 ```
 
 ```
   Unit testing - rspec
   $ Rspec spec
-
 ```
 
 ## Authors
@@ -57,11 +53,13 @@
 - LinkedIn: [Favour Amarachi Ezeugwa](https://www.linkedin.com/in/favour-amarachi-ezeugwa-a5bb31149/)
 - Twitter:[@Favour_ezeugwa](https://twitter.com/Favour_ezeugwa)
 
+
 👤 **MICHAEL MUNAVU**
 
 - GitHub: [@githubhandle](https://github.com/MICHAELMUNAVU83)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/michael-munavu-78703a218/)
 - Twitter: [@twitterhandle](https://twitter.com/MunavuMichael)
+
 
 👤 **Gideon Dadi**
 
