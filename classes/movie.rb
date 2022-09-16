@@ -1,6 +1,6 @@
 require_relative 'item'
 
-class Movie < item
+class Movie < Item
   attr_accessor :silet
   
   def initialize(publish_date, silet)
