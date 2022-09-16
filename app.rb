@@ -18,9 +18,11 @@ class App
     @books = []
     @games = []
     @music_albums = []
+    @movies = []
     @authors = []
     @labels = []
     @genres = []
+    @sources []
 
     load_labels
     load_author
