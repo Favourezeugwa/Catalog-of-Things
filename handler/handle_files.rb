@@ -2,11 +2,13 @@ require 'json'
 require_relative '../modules/game_module'
 require_relative '../modules/book_module'
 require_relative '../modules/music_module'
+require_relative '../modules/movie_module'
 
 module HandleFiles
   include GamesModule
   include BookModule
   include MusicModule
+  include MovieModule
 
   # WRITER
   def write_json(array, file_path)

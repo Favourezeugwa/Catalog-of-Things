@@ -5,6 +5,8 @@ require_relative 'classes/game'
 require_relative 'classes/author'
 require_relative 'classes/music'
 require_relative 'classes/genre'
+require_relative 'classes/movie'
+require_relative 'classes/source'
 require_relative 'modules/validity_module'
 require_relative 'handler/handle_files'
 
@@ -22,7 +24,7 @@ class App
     @authors = []
     @labels = []
     @genres = []
-    @sources []
+    @sources = []
 
     load_labels
     load_author
