@@ -29,19 +29,22 @@ class App
 
   def menu_options
     puts 'WELCOME TO MY CATALOG OF THINGS!'
-    while @response != 10
+    while @response != 13
       puts(
         'Please choose an option by entering a number:
         1 - List all books
         2 - List all music albums
         3 - List of games
-        4 - List all labels
-        5 - List all genres
-        6 - List all authors
-        7 - Add a book
-        8 - Add a music album
-        9 - Add a game
-        10 - Exit'
+        4 - List all movies
+        5 - List all labels
+        6 - List all genres
+        7 - List all authors
+        8 - List all sources
+        9 - Add a book
+        10 - Add a music album
+        11 - Add a game
+        12 - Add a movie
+        13 - Exit'
       )
       start_app
     end
@@ -57,17 +60,23 @@ class App
     when 3
       list_games
     when 4
-      list_labels
+      list_movies
     when 5
-      list_genres
+      list_labels
     when 6
-      list_authors
+      list_genres
     when 7
-      add_book
+      list_authors
     when 8
-      add_music_album
+      list_sources
     when 9
+      add_book
+    when 10
+      add_music_album
+    when 11
       add_game
+    when 12
+      add_movie
     end
   end
 end
