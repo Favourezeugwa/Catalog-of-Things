@@ -29,7 +29,7 @@ class App
     load_labels
     load_author
     load_genres
-    # load_sources
+    load_sources
   end
 
   def menu_options

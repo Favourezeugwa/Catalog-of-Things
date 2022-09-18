@@ -145,7 +145,7 @@ module HandleFiles
       list = Source.new(source['source_name'])
       @sources << list
       source['Items'].each do |item|
-        source.add_item(Movie.new(item['silet'], item['publish_date']))
+        list.add_item(Movie.new(item['silet'], item['publish_date']))
       end
     end
   end
