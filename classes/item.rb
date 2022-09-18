@@ -32,4 +32,9 @@ class Item
     @genre = genre
     genre.add_item(self) unless genre.items.include?(self)
   end
+
+  def add_source(source)
+    @source = source
+    source.add_item(self) unless source.items.include?(self)
+  end
 end

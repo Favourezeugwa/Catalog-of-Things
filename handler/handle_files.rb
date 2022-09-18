@@ -2,11 +2,13 @@ require 'json'
 require_relative '../modules/game_module'
 require_relative '../modules/book_module'
 require_relative '../modules/music_module'
+require_relative '../modules/movie_module'
 
 module HandleFiles
   include GamesModule
   include BookModule
   include MusicModule
+  include MovieModule
 
   # WRITER
   def write_json(array, file_path)
@@ -82,7 +84,7 @@ module HandleFiles
   def load_labels
     parse_file = read_json('./JSONdata/labels.json')
     parse_file.each do |label|
-      tag = Label.new(label['publisher'], label['cover_state'])
+      tag = Label.new(label['title'], label['color'])
       @labels << tag
       label['Items'].each do |item|
         tag.add_item(Book.new(item['cover_state'], item['publisher'], item['publish_date']))
@@ -115,6 +117,35 @@ module HandleFiles
       @genres << record
       genre['Items'].each do |item|
         record.add_item(MusicAlbum.new(item['on_sportify'], item['publish_date']))
+      end
+    end
+  end
+
+  # MOVIES
+  def save_sources
+    array = []
+    @sources.each do |source|
+      array << {
+        source_id: source.id,
+        source_name: source.name,
+        Items: source.items.map do |item|
+                 {
+                   publish_date: item.publish_date,
+                   silet: item.silet
+                 }
+               end
+      }
+    end
+    write_json(array, './JSONdata/sources.json')
+  end
+
+  def load_sources
+    parse_file = read_json('./JSONdata/sources.json')
+    parse_file.each do |source|
+      list = Source.new(source['source_name'])
+      @sources << list
+      source['Items'].each do |item|
+        list.add_item(Movie.new(item['publish_date'], item['silet']))
       end
     end
   end

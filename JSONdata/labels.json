@@ -1,3 +1,31 @@
 [
- 
+  {
+    "label_id" : 814,
+    "title" : "New Physics",
+    "color" : "Blue",
+    "Items" : [
+      {
+        "cover_state" : "P.N Okeke",
+        "publisher" : "good",
+        "publish_date" : "1999-04-28"
+      },
+      {
+        "cover_state" : "bad",
+        "publisher" : "Elizabeth Meyer",
+        "publish_date" : "2004-08-25"
+      }
+    ]
+  },
+  {
+    "label_id" : 484,
+    "title" : "Chemistry",
+    "color" : "brown",
+    "Items" : [
+      {
+        "cover_state" : "excellent",
+        "publisher" : "Ababio Johnson",
+        "publish_date" : "2019-07-18"
+      }
+    ]
+  }
 ]

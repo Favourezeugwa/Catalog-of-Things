@@ -62,7 +62,7 @@ module BookModule
   def list_labels
     puts 'No labels found' if @labels.empty?
     @labels.each_with_index do |label, index|
-      puts "#{index}) [label ID]: '#{label.id}', Label title: '#{label.title}', Label color: '#{label.color}'"
+      puts "#{index}) [label ID]: '#{label.id}', Title: '#{label.title}', Color: '#{label.color}'"
     end
   end
 end
