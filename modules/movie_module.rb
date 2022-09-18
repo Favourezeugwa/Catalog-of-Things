@@ -53,11 +53,11 @@ module MovieModule
 
   def list_movies
     puts 'no movies found' if @sources.empty?
-      @sources.each do |source|
-        source.items.each_with_index do |item, index|
-          puts "#{index}) [Source name]: '#{source.name}', Publish date: '#{item.publish_date}', Silet: '#{item.silet}'"
-        end
+    @sources.each do |source|
+      source.items.each_with_index do |item, index|
+        puts "#{index}) [Source name]: '#{source.name}', Publish date: '#{item.publish_date}', Silet: '#{item.silet}'"
       end
+    end
   end
 
   def list_sources
