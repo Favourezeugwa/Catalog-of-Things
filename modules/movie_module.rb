@@ -36,16 +36,18 @@ module MovieModule
     movie = create_movie
 
     puts 'Enter [1] to create a new source and [2] for an existing source'
-    source = gets.chomp
+    source = gets.chomp.to_i
     case source
     when 1
       source = new_movie_source
       @sources << source.add_item(movie)
       @movies << movie
+      save_sources
     when 2
       source = existing_movie_source
       source.add_item(movie)
       @movies << movie
+      save_sources
     end
   end
 
@@ -53,5 +55,9 @@ module MovieModule
   end
 
   def list_sources
+    puts 'no sources found' if @sources.empty?
+    @sources.each_with_index do |source, index|
+      puts "#{index}) [Source ID]: '#{source.id}', Source name: '#{source.name}'"
+    end
   end
 end

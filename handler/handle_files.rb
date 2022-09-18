@@ -120,4 +120,26 @@ module HandleFiles
       end
     end
   end
+
+  # MOVIES
+  def save_sources
+    array = []
+    @sources.each do |source|
+      array << {
+        source_id: source.id,
+        source_name: source.name,
+        Items: source.items.map do |item|
+                 {
+                   silet: item.silet,
+                   publish_date: item.publish_date
+                 }
+               end
+      }
+    end
+    write_json(array, './JSONdata/sources.json')
+  end
+
+  def load_sources
+    
+  end
 end
