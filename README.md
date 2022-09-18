@@ -7,16 +7,12 @@
 ## Built With
 
 - Ruby
-- UML Schema diagram
+- [UML Schema diagram](./asset/schema.uml.PNG)
 - Rspec unit test
 - JSON
 - PostgreSQL
 - Ruby modules
 - Rubocop and Gemfile
-
-### UML Schema diagram
-
-> [UML Schema diagram](./asset/schema.uml.PNG)
 
 ### Link to video recording
 
