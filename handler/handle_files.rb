@@ -84,7 +84,7 @@ module HandleFiles
   def load_labels
     parse_file = read_json('./JSONdata/labels.json')
     parse_file.each do |label|
-      tag = Label.new(label['publisher'], label['cover_state'])
+      tag = Label.new(label['title'], label['color'])
       @labels << tag
       label['Items'].each do |item|
         tag.add_item(Book.new(item['cover_state'], item['publisher'], item['publish_date']))
@@ -140,6 +140,13 @@ module HandleFiles
   end
 
   def load_sources
-    
+    parse_file = read_json('./JSONdata/sources.json')
+    parse_file.each do |source|
+      list = Source.new(source['source_name'])
+      @sources << list
+      source['Items'].each do |item|
+        source.add_item(Movie.new(item['silet'], item['publish_date']))
+      end
+    end
   end
 end
