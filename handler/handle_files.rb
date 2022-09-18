@@ -130,8 +130,8 @@ module HandleFiles
         source_name: source.name,
         Items: source.items.map do |item|
                  {
-                   silet: item.silet,
-                   publish_date: item.publish_date
+                   publish_date: item.publish_date,
+                   silet: item.silet
                  }
                end
       }
@@ -145,7 +145,7 @@ module HandleFiles
       list = Source.new(source['source_name'])
       @sources << list
       source['Items'].each do |item|
-        list.add_item(Movie.new(item['silet'], item['publish_date']))
+        list.add_item(Movie.new(item['publish_date'], item['silet']))
       end
     end
   end
