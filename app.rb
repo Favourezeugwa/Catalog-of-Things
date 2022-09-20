@@ -8,12 +8,18 @@ require_relative 'classes/genre'
 require_relative 'classes/movie'
 require_relative 'classes/source'
 require_relative 'validation'
-require_relative 'handler/handle_files'
+require_relative 'handler/handle_label'
+require_relative 'handler/handle_genre'
+require_relative 'handler/handle_author'
+require_relative 'handler/handle_source'
 
 require 'json'
 class App
   include Validation
-  include HandleFiles
+  include HandleLabel
+  include HandleGenre
+  include HandleAuthor
+  include HandleSource
 
   def initialize
     @response = 0
