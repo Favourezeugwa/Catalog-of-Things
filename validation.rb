@@ -1,4 +1,4 @@
-module Validity
+module Validation
   def valid_date(publish_date)
     return unless publish_date == '' || publish_date !~ /\d{4}-\d{2}-\d{2}/
 

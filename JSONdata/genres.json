@@ -1,6 +1,6 @@
 [
   {
-    "genre_id" : 462,
+    "genre_id" : 29,
     "name" : "pop",
     "Items" : [
       {
@@ -10,6 +10,16 @@
       {
         "on_sportify" : false,
         "publish_date" : "1999-09-09"
+      }
+    ]
+  },
+  {
+    "genre_id" : 558,
+    "name" : "blues",
+    "Items" : [
+      {
+        "on_sportify" : false,
+        "publish_date" : "2001-12-30"
       }
     ]
   }
