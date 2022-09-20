@@ -7,12 +7,12 @@ require_relative 'classes/music'
 require_relative 'classes/genre'
 require_relative 'classes/movie'
 require_relative 'classes/source'
-require_relative 'modules/validity_module'
+require_relative 'validation'
 require_relative 'handler/handle_files'
 
 require 'json'
 class App
-  include Validity
+  include Validation
   include HandleFiles
 
   def initialize
