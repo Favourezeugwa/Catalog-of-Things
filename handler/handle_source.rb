@@ -4,7 +4,7 @@ require_relative '../modules/movie_module'
 module HandleSource
   include HelperFunctions
   include MovieModule
-  
+
   # MOVIES
   def save_sources
     array = []

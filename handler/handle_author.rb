@@ -14,12 +14,12 @@ module HandleAuthor
         first_name: author.first_name,
         last_name: author.last_name,
         Items: author.items.map do |item|
-                {
-                  publish_date: item.publish_date,
-                  multiplayer: item.multiplayer,
-                  last_played_at: item.last_played_at
-                }
-              end
+                 {
+                   publish_date: item.publish_date,
+                   multiplayer: item.multiplayer,
+                   last_played_at: item.last_played_at
+                 }
+               end
       }
     end
     write_json(array, './JSONdata/authors.json')
